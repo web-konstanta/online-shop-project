@@ -10,7 +10,7 @@
       <p class="lead my-3"><span style="font-weight: 900">Имя клиента</span>: {{ $order->name }}</p>
       <p class="lead my-3"><span style="font-weight: 900">Телефон клиента</span>: {{ $order->phone }}</p>
       <p class="lead my-3"><span style="font-weight: 900">Город</span>: {{ $order->city }}</p>
-      <p class="lead my-3"><span style="font-weight: 900">Адрес</span>: {{ $order->address }}</p>
+      <p class="lead my-3"><span style="font-weight: 900">Адрес новой почты</span>: отделение № {{ $order->postal }}</p>
       @if($order->message)
         <p class="lead my-3"><span style="font-weight: 900">Комментарий к заказу</span>: {{ $order->message }}</p>
       @endif

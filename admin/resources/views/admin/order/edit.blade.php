@@ -33,11 +33,11 @@
             <input type="text" class="form-control" name="city" value="{{ $order->city }}">
           </div>
           <div class="mb-3">
-            <label class="form-label">Адрес</label>
-            @error('address')
+            <label class="form-label">Адрес новой почты</label>
+            @error('postal')
             <p class="text-danger">{{ $message }}</p>
             @enderror
-            <input type="text" class="form-control" name="address" value="{{ $order->address }}">
+            <input type="text" class="form-control" name="postal" value="{{ $order->postal }}">
           </div>
           <div class="mb-3">
             <label class="form-label">Статус заказа</label>

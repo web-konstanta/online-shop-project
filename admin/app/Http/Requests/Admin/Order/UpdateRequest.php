@@ -27,7 +27,7 @@ class UpdateRequest extends FormRequest
             'name' => ['required', 'max:190'],
             'phone' => ['required', 'min:10'],
             'city' => ['required', 'max:190'],
-            'address' => ['required', 'max:190'],
+            'postal' => ['required', 'max:190'],
             'status' => ['required']
         ];
     }
@@ -41,8 +41,8 @@ class UpdateRequest extends FormRequest
             'phone.min' => 'Телефон введен не корректно',
             'city.required' => 'Город должен быть введен',
             'city.max' => 'Город слишком длинный',
-            'address.required' => 'Адрес должен быть введен',
-            'address.max' => 'Адрес слишком длинный',
+            'postal.required' => 'Адрес новой почты должен быть введен',
+            'postal.max' => 'Адрес новой почты слишком длинный',
         ];
     }
 }
