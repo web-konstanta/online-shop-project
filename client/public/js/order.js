@@ -1,7 +1,7 @@
 const name = document.querySelector('.name')
 const phone = document.querySelector('.phone')
 const city = document.querySelector('.city')
-const address = document.querySelector('.address')
+const postal = document.querySelector('.postal')
 const message = document.querySelector('.message')
 const submit = document.querySelector('.submit')
 
@@ -16,7 +16,7 @@ submit.onclick = () => {
             name: name.value,
             phone: phone.value,
             city: city.value,
-            address: address.value,
+            postal: postal.value,
             message: message.value,
         },
         success: () => {
@@ -32,8 +32,8 @@ submit.onclick = () => {
             $(phoneError).insertAfter('#phone')
             const cityError = `<div class="text-danger">${errors.city ? errors.city : ''}</div>`
             $(cityError).insertAfter('#city')
-            const addressError = `<div class="text-danger">${errors.address ? errors.address : ''}</div>`
-            $(addressError).insertAfter('#address')
+            const postalError = `<div class="text-danger">${errors.postal ? errors.postal : ''}</div>`
+            $(postalError).insertAfter('#postal')
         }
     })
 }

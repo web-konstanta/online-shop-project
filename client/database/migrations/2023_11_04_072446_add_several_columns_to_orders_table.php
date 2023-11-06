@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('city')
                 ->nullable()
                 ->after('phone');
-            $table->string('address')
+            $table->string('postal')
                 ->nullable()
                 ->after('city');
         });
