@@ -368,12 +368,12 @@
              data-site-header-url="https://my.prom.ua/remote/header/company_site_header/3225711?current_url=https%3A%2F%2Fsparta-gear.com.ua%2F&amp;site_language=ru&amp;is_premium_service_paid=1"
              data-bazid="3"></div>
         <div class="b-head-control-panel__container" data-qaid="header-block">
-            <div data-bazooka="LanguageSwitch" data-bazid="4">
-                <div class="LanguageSwitch__root--1cwxu"><a class="LanguageSwitch__item--R2zW6"
-                                                            href="https://sparta-gear.com.ua/ua/"><span
-                            class="LanguageSwitch__text--3x6Wz">ua</span></a><a class="LanguageSwitch__item--R2zW6"><span
-                            class="LanguageSwitch__text--3x6Wz LanguageSwitch__textActive--3j2DK">ru</span></a></div>
-            </div>
+{{--            <div data-bazooka="LanguageSwitch" data-bazid="4">--}}
+{{--                <div class="LanguageSwitch__root--1cwxu"><a class="LanguageSwitch__item--R2zW6"--}}
+{{--                                                            href="https://sparta-gear.com.ua/ua/"><span--}}
+{{--                            class="LanguageSwitch__text--3x6Wz">ua</span></a><a class="LanguageSwitch__item--R2zW6"><span--}}
+{{--                            class="LanguageSwitch__text--3x6Wz LanguageSwitch__textActive--3j2DK">ru</span></a></div>--}}
+{{--            </div>--}}
 
 
             <div class="b-head-control-panel__toolbar js-header_toolbar">
@@ -438,7 +438,9 @@
                                          data-tg-hovered="[{&quot;ns&quot;: &quot;main&quot;, &quot;method&quot;: &quot;gatrackQueue&quot;, &quot;args&quot;: [&quot;contact_view&quot;, &quot;hover_phones&quot;, {&quot;label/label&quot;: &quot;company_site-cs_main_page&quot;}], &quot;uuid&quot;: &quot;6e12e555b6891ee7a926bb1710a414cf0daa0eab&quot;}, {&quot;ns&quot;: &quot;ga4&quot;, &quot;method&quot;: &quot;ga4trackQueue&quot;, &quot;args&quot;: [&quot;hover_phones&quot;, {}], &quot;uuid&quot;: &quot;4e92a0387e6f34f29450d658153e2311a9a4bd8f&quot;}, {&quot;ns&quot;: &quot;ym&quot;, &quot;method&quot;: &quot;reachGoal&quot;, &quot;args&quot;: [&quot;company_contacts_hovered&quot;], &quot;uuid&quot;: &quot;4e4e38200b10121d2620b45f0cb38f2ce6db161d&quot;}]"
                                          data-tg-clicked="[{&quot;ns&quot;: &quot;ga4&quot;, &quot;method&quot;: &quot;ga4trackQueue&quot;, &quot;args&quot;: [&quot;call_phones&quot;, {}], &quot;uuid&quot;: &quot;0fb6dc9f679fb331c05ab91bc83b3be7618dbfaa&quot;}]">
                                         <a href="{{ route('product.index') }}" class="cs-header-phones__part text-white"><span
-                                                class="notranslate">Интернет магазин</span></a>
+                                                class="notranslate">
+                                                <img width="50" style="border-radius: 50%" src="{{ asset('icons/logo.png') }}">
+                                            </span></a>
                                     </div>
                                 </div>
                             </div>
