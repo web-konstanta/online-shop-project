@@ -47,8 +47,38 @@
             <input type="number" class="form-control" name="code" value="{{ $product->code }}" placeholder="Измените код товара">
           </div>
           <div class="mb-3">
+            <label class="form-label">Изображение (для витрины)</label>
             <img src="{{ $product->image ? url('storage/' . $product->image) : asset('icons/no-photo.png') }}" alt="product image">
-            <input type="file" class="form-control" name="image[]" multiple>
+            <input type="file" class="form-control" name="image">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Изображения (для информации о товаре)</label>
+            @if($product->images)
+              <div class="cs-product__visual d-flex">
+                @foreach(json_decode($product->images) as $image)
+                  <div class="cs-product__image csjs-image-wrap">
+                    <img
+                      class="cs-product-image__img csjs-image"
+                      src="{{ url('storage/' . $image) }}"
+                      data-cspgo-image-id="3387041477"
+                      alt="Термобілизна Helikon-Tex® US LEVEL 2 - Olive Green"
+                    >
+                  </div>
+                @endforeach
+              </div>
+            @else
+              <div class="cs-product__visual d-flex">
+                <div class="cs-product__image csjs-image-wrap">
+                  <img
+                    class="cs-product-image__img csjs-image"
+                    src="{{ asset('icons/no-photo.png') }}"
+                    data-cspgo-image-id="3387041477"
+                    alt="Термобілизна Helikon-Tex® US LEVEL 2 - Olive Green"
+                  >
+                </div>
+              </div>
+            @endif
+            <input type="file" class="form-control" name="images[]" multiple>
           </div>
           <div class="mb-3">
             <label class="form-label">Категория</label>
