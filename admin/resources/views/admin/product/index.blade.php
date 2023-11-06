@@ -33,32 +33,38 @@
           </tr>
           </thead>
           <tbody class="table-border-bottom-0">
-          @foreach($products as $product)
+          @if($products->count() > 0)
+            @foreach($products as $product)
+              <tr>
+                <td>{{ $product->id }}</td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->price }}</td>
+                <td class="text-center">
+                  <a href="{{ route('admin.product.show', $product->id) }}">
+                    <img src="{{ asset('icons/watch.png') }}" alt="watch">
+                  </a>
+                </td>
+                <td class="text-center">
+                  <a href="{{ route('admin.product.edit', $product->id) }}">
+                    <img src="{{ asset('icons/edit.png') }}" alt="watch">
+                  </a>
+                </td>
+                <td class="text-center">
+                  <form action="{{ route('admin.product.delete', $product->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" style="background: none; border: none">
+                      <img src="{{ asset('icons/delete.png') }}" alt="watch">
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            @endforeach
+          @else
             <tr>
-              <td>{{ $product->id }}</td>
-              <td>{{ $product->name }}</td>
-              <td>{{ $product->price }}</td>
-              <td class="text-center">
-                <a href="{{ route('admin.product.show', $product->id) }}">
-                  <img src="{{ asset('icons/watch.png') }}" alt="watch">
-                </a>
-              </td>
-              <td class="text-center">
-                <a href="{{ route('admin.product.edit', $product->id) }}">
-                  <img src="{{ asset('icons/edit.png') }}" alt="watch">
-                </a>
-              </td>
-              <td class="text-center">
-                <form action="{{ route('admin.product.delete', $product->id) }}" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" style="background: none; border: none">
-                    <img src="{{ asset('icons/delete.png') }}" alt="watch">
-                  </button>
-                </form>
-              </td>
+              <td>Товары отсутствуют</td>
             </tr>
-          @endforeach
+          @endif
           </tbody>
         </table>
       </div>

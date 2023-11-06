@@ -46,8 +46,12 @@
             <input type="number" class="form-control" name="code" placeholder="Введите код товара">
           </div>
           <div class="mb-3">
-            <label class="form-label">Изображение</label>
-            <input type="file" class="form-control" name="image[]" multiple>
+            <label class="form-label">Изображение (для витрины)</label>
+            <input type="file" class="form-control" name="image">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Изображения (для информации о товаре)</label>
+            <input type="file" class="form-control" name="images[]" multiple>
           </div>
           <div class="mb-3">
             <label class="form-label">Категория</label>

@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ProductController extends BaseController
@@ -41,13 +42,19 @@ class ProductController extends BaseController
     public function store(StoreRequest $request): RedirectResponse
     {
         $data = $request->validated();
+
         if (isset($data['image'])) {
-            $images = $data['image'];
+            $image = $data['image'];
             $data['image'] = $this
                 ->imageService
-                ->resize(array_shift($images), 'product', 300, 300);
+                ->resize($image, 'product', 300, 300);
+        }
+
+        if (isset($data['images'])) {
+            $images = $data['images'];
             $data['images'] = $this->imageService->saveProductImages($images);
         }
+
         $product = Product::query()->create($data);
         session()->flash('success', 'Товар ' . $product->name . ' успешно добавлен');
         return redirect()->route('admin.product.index');
@@ -62,17 +69,23 @@ class ProductController extends BaseController
     public function update(Product $product, UpdateRequest $request): RedirectResponse
     {
         $data = $request->validated();
-        if (isset($data['image'])) {
-            $images = json_decode($product->images, true);
-            $images[] = $product->image;
-            $this->imageService->deleteImages($images);
 
-            $productImages = $data['image'];
+        if (isset($data['image'])) {
+            Storage::delete('public/' . $product->image);
+            $image = $data['image'];
             $data['image'] = $this
                 ->imageService
-                ->resize(array_shift($productImages), 'product', 205, 255);
+                ->resize($image, 'product', 205, 255);
+        }
+
+        if (isset($data['images'])) {
+            $images = json_decode($product->images, true) ?? [];
+            $this->imageService->deleteImages($images);
+
+            $productImages = $data['images'];
             $data['images'] = $this->imageService->saveProductImages($productImages);
         }
+
         $product->update($data);
         session()->flash('success', 'Товар ' . $product->name . ' успешно обновлен');
         return redirect()->route('admin.product.index');
