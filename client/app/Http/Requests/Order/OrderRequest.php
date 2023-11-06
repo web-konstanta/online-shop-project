@@ -25,7 +25,7 @@ class OrderRequest extends FormRequest
             'name' => ['required', 'max:190'],
             'phone' => ['required', 'min:10'],
             'city' => ['required', 'max:190'],
-            'address' => ['required', 'max:190'],
+            'postal' => ['required', 'max:190'],
             'message' => ['nullable']
         ];
     }
@@ -39,8 +39,8 @@ class OrderRequest extends FormRequest
             'phone.min' => 'Телефон не должен быть менее 10 символов',
             'city.required' => 'Город должен быть введен',
             'city.max' => 'Город не должен быть длиннее 190 символов',
-            'address.required' => 'Адрес должен быть введен',
-            'address.max' => 'Адрес не должен быть длиннее 190 символов',
+            'postal.required' => 'Адрес должен быть введен',
+            'postal.max' => 'Адрес не должен быть длиннее 190 символов',
         ];
     }
 }

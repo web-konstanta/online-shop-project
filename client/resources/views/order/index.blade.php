@@ -23,9 +23,9 @@
                             <div class="mb-3">
                                 <input type="text" class="form-control city">
                             </div>
-                            <label id="address">Введите Ваш адрес проживания:</label>
+                            <label id="postal">Введите отделение новой почты:</label>
                             <div class="mb-3">
-                                <input type="text" class="form-control address">
+                                <input type="text" class="form-control postal">
                             </div>
                             <label>Введите комментарий (не обязательно)</label>
                             <div class="mb-3">
