@@ -15,6 +15,7 @@ class ProductController extends Controller
         $products = Product::query()
             ->orderBy('created_at', 'DESC')
             ->where('name', 'LIKE', "%{$search}%")
+            ->orWhere('code', 'LIKE', "%{$search}%")
             ->paginate(10);
         return view('product.index', compact('products'));
     }
@@ -28,7 +29,6 @@ class ProductController extends Controller
     {
         $search = $request->input('search');
         $products = Product::query()
-            ->orderBy('created_at', 'DESC')
             ->where('name', 'LIKE', "%{$search}%")
             ->where('is_new', 1)
             ->paginate(10);
