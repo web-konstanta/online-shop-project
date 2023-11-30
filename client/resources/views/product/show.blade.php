@@ -27,10 +27,12 @@
                         </h1>
                         <div class="cs-product__container">
                             @if($product->images)
-                                <div class="cs-product__visual d-flex" style="min-width: 800px; justify-content: space-between">
+                                <div class="cs-product__visual d-flex" style="width: 100%; justify-content: space-between; overflow-x: scroll">
                                     @foreach(json_decode($product->images) as $image)
                                         <div class="cs-product__image csjs-image-wrap">
                                             <img
+                                                height="262"
+                                                width="262"
                                                 class="cs-product-image__img csjs-image"
                                                 src="{{ $adminURL . '/storage/' . $image }}"
                                                 data-cspgo-image-id="3387041477"
