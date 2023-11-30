@@ -434,14 +434,14 @@
                         <div class="cs-header-phones">
                             <div class="cs-header-phones__info">
                                 <div id="ID-25c64376-5bff-4d1f-9765-5d3409cdadb3" data-qaid="company_phones">
-                                    <div class="cs-header-phones__item js-ga-phone-hover"
-                                         data-tg-hovered="[{&quot;ns&quot;: &quot;main&quot;, &quot;method&quot;: &quot;gatrackQueue&quot;, &quot;args&quot;: [&quot;contact_view&quot;, &quot;hover_phones&quot;, {&quot;label/label&quot;: &quot;company_site-cs_main_page&quot;}], &quot;uuid&quot;: &quot;6e12e555b6891ee7a926bb1710a414cf0daa0eab&quot;}, {&quot;ns&quot;: &quot;ga4&quot;, &quot;method&quot;: &quot;ga4trackQueue&quot;, &quot;args&quot;: [&quot;hover_phones&quot;, {}], &quot;uuid&quot;: &quot;4e92a0387e6f34f29450d658153e2311a9a4bd8f&quot;}, {&quot;ns&quot;: &quot;ym&quot;, &quot;method&quot;: &quot;reachGoal&quot;, &quot;args&quot;: [&quot;company_contacts_hovered&quot;], &quot;uuid&quot;: &quot;4e4e38200b10121d2620b45f0cb38f2ce6db161d&quot;}]"
-                                         data-tg-clicked="[{&quot;ns&quot;: &quot;ga4&quot;, &quot;method&quot;: &quot;ga4trackQueue&quot;, &quot;args&quot;: [&quot;call_phones&quot;, {}], &quot;uuid&quot;: &quot;0fb6dc9f679fb331c05ab91bc83b3be7618dbfaa&quot;}]">
-                                        <a href="{{ route('product.index') }}" class="cs-header-phones__part text-white"><span
-                                                class="notranslate">
-                                                <img width="50" style="border-radius: 50%" src="{{ asset('icons/logo.png') }}">
-                                            </span></a>
-                                    </div>
+{{--                                    <div class="cs-header-phones__item js-ga-phone-hover"--}}
+{{--                                         data-tg-hovered="[{&quot;ns&quot;: &quot;main&quot;, &quot;method&quot;: &quot;gatrackQueue&quot;, &quot;args&quot;: [&quot;contact_view&quot;, &quot;hover_phones&quot;, {&quot;label/label&quot;: &quot;company_site-cs_main_page&quot;}], &quot;uuid&quot;: &quot;6e12e555b6891ee7a926bb1710a414cf0daa0eab&quot;}, {&quot;ns&quot;: &quot;ga4&quot;, &quot;method&quot;: &quot;ga4trackQueue&quot;, &quot;args&quot;: [&quot;hover_phones&quot;, {}], &quot;uuid&quot;: &quot;4e92a0387e6f34f29450d658153e2311a9a4bd8f&quot;}, {&quot;ns&quot;: &quot;ym&quot;, &quot;method&quot;: &quot;reachGoal&quot;, &quot;args&quot;: [&quot;company_contacts_hovered&quot;], &quot;uuid&quot;: &quot;4e4e38200b10121d2620b45f0cb38f2ce6db161d&quot;}]"--}}
+{{--                                         data-tg-clicked="[{&quot;ns&quot;: &quot;ga4&quot;, &quot;method&quot;: &quot;ga4trackQueue&quot;, &quot;args&quot;: [&quot;call_phones&quot;, {}], &quot;uuid&quot;: &quot;0fb6dc9f679fb331c05ab91bc83b3be7618dbfaa&quot;}]">--}}
+{{--                                        <a href="{{ route('product.index') }}" class="cs-header-phones__part text-white"><span--}}
+{{--                                                class="notranslate">--}}
+{{--                                                <img width="50" style="border-radius: 50%" src="{{ asset('icons/logo.png') }}">--}}
+{{--                                            </span></a>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>
