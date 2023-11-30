@@ -15,12 +15,12 @@
                                                         data-edit-role="showroom" style="display:none"></a></div>
                     <ul class="cs-product-main-page__list" id="productsList">
                         @if($products->count() !== 0)
-                            @forelse($products as $product)
+                            @foreach($products as $product)
                                 @include('includes.card', $product)
-                            @empty
-                                <li>Товары временно отсутствуют</li>
-                            @endforelse
+                            @endforeach
                             <div>{{ $products->links() }}</div>
+                        @else
+                            <li>Товары-новинки временно отсутствуют</li>
                         @endif
                     </ul>
                 </div>
