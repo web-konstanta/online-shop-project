@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Category;
+namespace App\Http\Requests\Admin\Subcategory;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:190'],
-            'sub_category_id' => ['required', 'exists:sub_categories,id']
+            'category_id' => ['required', 'exists:categories,id']
         ];
     }
 

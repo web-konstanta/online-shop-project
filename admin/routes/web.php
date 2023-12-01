@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Subcategory\SubCategoryController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -47,6 +48,14 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
         Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('edit');
         Route::put('/{category}/update', [CategoryController::class, 'update'])->name('update');
         Route::delete('/{category}/delete', [CategoryController::class, 'destroy'])->name('delete');
+    });
+    Route::group(['prefix' => 'subcategory', 'as' => 'subcategory.'], function () {
+        Route::get('/', [SubCategoryController::class, 'index'])->name('index');
+        Route::get('/create', [SubCategoryController::class, 'create'])->name('create');
+        Route::post('/create', [SubCategoryController::class, 'store'])->name('store');
+        Route::get('/{subCategory}/edit', [SubCategoryController::class, 'edit'])->name('edit');
+        Route::put('/{subCategory}/update', [SubCategoryController::class, 'update'])->name('update');
+        Route::delete('/{subCategory}/delete', [SubCategoryController::class, 'destroy'])->name('delete');
     });
     Route::group(['prefix' => 'order', 'as' => 'order.'], function () {
         Route::get('/', [OrderController::class, 'index'])->name('index');

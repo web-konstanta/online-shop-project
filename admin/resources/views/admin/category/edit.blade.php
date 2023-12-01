@@ -8,8 +8,9 @@
       <div class="card-body">
         <h4 class="mb-2">Изменить категорию "{{ $category->name }}"</h4>
 
-        <form class="mb-3" action="{{ route('admin.category.edit') }}" method="POST">
+        <form class="mb-3" action="{{ route('admin.category.update', $category->id) }}" method="POST">
           @csrf
+          @method('PUT')
           <div class="mb-3">
             <label class="form-label">Название</label>
             @error('name')

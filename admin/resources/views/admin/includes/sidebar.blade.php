@@ -108,6 +108,11 @@
           </a>
         </li>
         <li class="menu-item ">
+          <a href="{{ route('admin.subcategory.index') }}" class="menu-link">
+            <div>Управление подкатегориями</div>
+          </a>
+        </li>
+        <li class="menu-item ">
           <a href="{{ route('admin.order.index') }}" class="menu-link">
             <div>Управление заказами</div>
           </a>
