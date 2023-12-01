@@ -49,6 +49,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'cabinet', 'as' => 'cabinet.']
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::get('/products/{code}', [CategoryController::class, 'products'])->name('category.products');
+Route::group(['prefix' => 'products', 'as' => 'category.'], function () {
+    Route::get('/{code}', [CategoryController::class, 'products'])->name('products');
+    Route::get('/{categoryCode}/{subCategoryCode}', [CategoryController::class, 'subCategoryProduct'])->name('sub_category-products');
+});
 
 Route::get('/contacts', [InfoController::class, 'contacts'])->name('contacts');

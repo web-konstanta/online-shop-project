@@ -5,14 +5,7 @@
 @section('content')
     <div class="cs-page__content-wrapper cs-page__content-wrapper_page_main">
         <div class="cs-page__content cs-page__content_page_main">
-            <h1 class="text-center" style="font-size: 24px">Категория: {{ $category->name }}</h1>
-            <ul class="d-flex justify-content-between col-3" style="margin: 25px auto">
-                @foreach($category->subCategories as $subCategory)
-                    <a href="{{ route('category.sub_category-products', [$category->code, $subCategory->code]) }}">
-                        <li style="font-size: 20px">{{ $subCategory->name }}</li>
-                    </a>
-                @endforeach
-            </ul>
+            <h1 class="text-center" style="font-size: 24px">Подкатегория: {{ $subCategory->name }}</h1>
             <div class="cs-page__row mt-4">
                 <div class="cs-product-main-page">
                     <div class="cs-title-wrapper cs-online-edit"><span class="cs-title" data-qaid="title_panel">Все товары</span><a
