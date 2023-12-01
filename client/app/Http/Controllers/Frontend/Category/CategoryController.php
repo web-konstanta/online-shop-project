@@ -33,7 +33,7 @@ class CategoryController extends Controller
         $subCategory = SubCategory::query()->where('code', $subCategoryCode)->first();
 
         $products = Product::query()
-            ->where('sub_category_id', $category->id)
+            ->where('sub_category_id', $subCategory->id)
             ->where('name', 'LIKE', "%{$search}%")
             ->paginate(10);
 
