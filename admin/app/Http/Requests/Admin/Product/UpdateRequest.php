@@ -32,6 +32,7 @@ class UpdateRequest extends FormRequest
             'image' => ['nullable', 'file'],
             'images' => ['nullable', 'array'],
             'category_id' => ['required', 'exists:categories,id'],
+            'sub_category_id' => ['required', 'exists:sub_categories,id'],
             'top_sales' => ['required'],
             'is_new' => ['required'],
             'is_active' => ['required']

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Category\StoreRequest;
 use App\Http\Requests\Admin\Category\UpdateRequest;
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -33,7 +34,8 @@ class CategoryController extends Controller
 
     public function create(): View
     {
-        return view('admin.category.create');
+        $subCategories = SubCategory::all();
+        return view('admin.category.create', compact('subCategories'));
     }
 
     public function store(StoreRequest $request): RedirectResponse
@@ -49,7 +51,8 @@ class CategoryController extends Controller
 
     public function edit(Category $category): View
     {
-        return view('admin.category.edit', compact('category'));
+        $subCategories = SubCategory::all();
+        return view('admin.category.edit', compact('category', 'subCategories'));
     }
 
     public function update(Category $category, UpdateRequest $request): RedirectResponse

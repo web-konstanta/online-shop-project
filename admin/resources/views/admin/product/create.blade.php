@@ -62,6 +62,14 @@
             </select>
           </div>
           <div class="mb-3">
+            <label class="form-label">Подкатегория</label>
+            <select name="sub_category_id" class="form-select" aria-label="Default select example">
+              @foreach($subCategories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+              @endforeach
+            </select>
+          </div>
+          <div class="mb-3">
             <label class="form-label">Топ продаж</label>
             <select name="top_sales" class="form-select" aria-label="Default select example">
               <option value="0">Нет</option>

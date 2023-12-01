@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Product\StoreRequest;
 use App\Http\Requests\Admin\Product\UpdateRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\SubCategory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -36,7 +37,8 @@ class ProductController extends BaseController
     public function create(): View
     {
         $categories = Category::all();
-        return view('admin.product.create', compact('categories'));
+        $subCategories = SubCategory::all();
+        return view('admin.product.create', compact('categories', 'subCategories'));
     }
 
     public function store(StoreRequest $request): RedirectResponse
@@ -63,7 +65,8 @@ class ProductController extends BaseController
     public function edit(Product $product): View
     {
         $categories = Category::all();
-        return view('admin.product.edit', compact('product', 'categories'));
+        $subCategories = SubCategory::all();
+        return view('admin.product.edit', compact('product', 'categories', 'subCategories'));
     }
 
     public function update(Product $product, UpdateRequest $request): RedirectResponse
