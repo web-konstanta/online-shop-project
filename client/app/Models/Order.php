@@ -18,13 +18,16 @@ class Order extends Model
         return $this->belongsToMany(Product::class, 'order_products');
     }
 
-    public function addIndexesToOrderProducts(array $indexes): void
+    public function addIndexesToOrderProducts(array $indexes, array $sizes): void
     {
         OrderProduct::query()
             ->where('order_id', $this->id)
             ->get()
-            ->each(function ($order) use ($indexes) {
-            $order->update(['products_count' => $indexes[$order->product_id]]);
+            ->each(function ($order) use ($indexes, $sizes) {
+            $order->update([
+                'products_count' => $indexes[$order->product_id],
+                'product_size' => $sizes[$order->product_id]
+            ]);
         });
     }
 

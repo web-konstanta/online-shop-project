@@ -3,6 +3,45 @@ const productsList = document.querySelector('#productsList')
 const basketProducts = $('#basketBody')
 const basketCount = $('#basketCount')
 
+$('#makeOrder a').on('click', function (e) {
+    e.preventDefault();
+
+    let sizes = []
+    let productIds = []
+
+    $('select[data-type="size"]').each(function () {
+        let selectedValue = $(this).val();
+        let productId = $(this).attr('data-id').toString()
+
+        sizes.push(selectedValue)
+        productIds.push(productId)
+    });
+
+    console.log(sizes, productIds)
+
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: '/api/v1/basket/sizes',
+        method: 'POST',
+        data: {
+            sizes: sizes,
+            productIds: productIds
+        },
+        success: (response) => {
+
+            window.location.href = '/order/create'
+
+        },
+        error: (error) => {
+
+            console.log(error)
+
+        }
+    })
+});
+
 function ajax(url, productId) {
 
     $.ajax({

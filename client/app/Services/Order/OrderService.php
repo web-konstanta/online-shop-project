@@ -10,6 +10,7 @@ class OrderService extends Controller
     public function make(array $data): void
     {
         $basketProducts = session()->get('basketProducts');
+        $basketProductsSizes = session()->get('productSizes');
 
         $user = auth()->user();
         $orderData = array_merge($data, ['user_id' => $user ? $user->id : 0]);
@@ -19,9 +20,10 @@ class OrderService extends Controller
         if ($basketProducts) {
             $productsIds = array_keys($basketProducts);
             $order->products()->attach($productsIds);
-            $order->addIndexesToOrderProducts($basketProducts);
+            $order->addIndexesToOrderProducts($basketProducts, $basketProductsSizes);
         }
 
         session()->forget('basketProducts');
+        session()->forget('productSizes');
     }
 }
