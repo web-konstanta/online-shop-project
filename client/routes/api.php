@@ -9,6 +9,7 @@ Route::prefix('v1')->group(function () {
         Route::post('/add/{productId}', [BasketController::class, 'add']);
         Route::post('/remove/{productId}', [BasketController::class, 'remove']);
         Route::post('/delete/{productId}', [BasketController::class, 'delete']);
+        Route::post('/sizes', [BasketController::class, 'sizes']);
     });
 
     Route::prefix('order')->group(function () {

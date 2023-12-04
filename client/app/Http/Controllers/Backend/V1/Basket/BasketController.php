@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\V1\Basket;
 
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class BasketController extends BaseController
 {
@@ -34,5 +35,13 @@ class BasketController extends BaseController
         return response()->json(
             $this->basketService->deleteProduct($productId)
         );
+    }
+
+    public function sizes(Request $request): JsonResponse
+    {
+        $sizes = $request->input('sizes');
+        $productIds = $request->input('productIds');
+        session()->put('productSizes', array_combine($productIds, $sizes));
+        return response()->json(['success' => true, 'sizes' => $sizes]);
     }
 }
