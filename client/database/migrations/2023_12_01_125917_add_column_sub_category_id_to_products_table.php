@@ -15,10 +15,6 @@ return new class extends Migration
             $table->unsignedBigInteger('sub_category_id')
                 ->after('category_id')
                 ->nullable();
-            $table->foreign('sub_category_id', 'sub_category_fk')
-                ->references('id')
-                ->on('sub_categories')
-                ->onDelete('cascade');
         });
     }
 
@@ -29,7 +25,6 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->dropColumn('sub_category_id');
-            $table->dropForeign('sub_category_fk');
         });
     }
 };
