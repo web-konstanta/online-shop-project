@@ -25,7 +25,6 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:190'],
-            'sub_category_id' => ['required', 'exists:sub_categories,id']
         ];
     }
 
