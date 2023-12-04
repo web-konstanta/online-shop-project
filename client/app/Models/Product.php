@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use \Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 class Product extends Model
@@ -49,5 +50,15 @@ class Product extends Model
     public function getImage(): string
     {
         return $this->image ? env('ADMIN_URL') . '/storage/' . $this->image : asset('icons/no-photo.png');
+    }
+
+    public static function getProductsBySearch(string $search, string $column): LengthAwarePaginator
+    {
+        return self::query()
+            ->where($column, 1)
+            ->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('code', 'LIKE', "%{$search}%");
+            })->paginate(10);
     }
 }

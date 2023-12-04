@@ -28,21 +28,14 @@ class ProductController extends Controller
     public function newProducts(Request $request): View
     {
         $search = $request->input('search');
-        $products = Product::query()
-            ->where('name', 'LIKE', "%{$search}%")
-            ->where('is_new', 1)
-            ->paginate(10);
+        $products = Product::getProductsBySearch($search ?? '', 'is_new');
         return view('product.new', compact('products'));
     }
 
     public function topSales(Request $request): View
     {
         $search = $request->input('search');
-        $products = Product::query()
-            ->orderBy('created_at', 'DESC')
-            ->where('name', 'LIKE', "%{$search}%")
-            ->where('top_sales', 1)
-            ->paginate(10);
+        $products = Product::getProductsBySearch($search ?? '', 'top_sales');
         return view('product.top', compact('products'));
     }
 }
