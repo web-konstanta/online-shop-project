@@ -3,7 +3,7 @@
 @section('title', 'Информация о товаре')
 
 @section('content')
-    <div class="cs-page__main-content">
+    <div class="cs-page__main-content" style="border-top: none">
         <div class="cs-page__content-wrapper">
             <div class="cs-page__content">
                 <div class="b-breadcrumb" data-bazooka="Breadcrumbs"
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <div class="cs-tab-list">
-                        <div class="cs-page__row cs-page__row_type_product">
+                        <div class="cs-page__row">
                             <div class="cs-tab-list">
                                 <div id="description"
                                     class="cs-tab-list__item cs-tab-list__item_state_active js-content-item cs-online-edit">
