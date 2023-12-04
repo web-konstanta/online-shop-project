@@ -3,7 +3,7 @@
 @section('title', 'Военные товары')
 
 @section('content')
-    <div class="cs-page__main-content">
+    <div class="cs-page__main-content" style="border-top: none">
         <aside class="cs-sidebar-right">
             <div class="cs-sidebar-right__row">
                 <div class="cs-sked cs-online-edit"><span class="cs-title cs-title_type_sidebar">Графік роботи</span><a
