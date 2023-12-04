@@ -54,4 +54,10 @@ class Order extends Model
     {
         return OrderStatus::all();
     }
+
+    public function getProductSizeById(int $id): string
+    {
+        $size = Size::query()->find($id);
+        return $size->name;
+    }
 }
