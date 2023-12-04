@@ -29,10 +29,10 @@
                         <button style="width: 40px" class="btn btn-success" data-type="add" data-id="{{ $product->id }}">+</button>
                     </td>
                     <td>
-                        <select class="form-select">
-                            <option>размер 1</option>
-                            <option>размер 2</option>
-                            <option>размер 2</option>
+                        <select class="form-select product-size">
+                            @foreach($product->category->sizes as $size)
+                                <option value="{{ $size->id }}">{{ $size->name }}</option>
+                            @endforeach
                         </select>
                     </td>
                     <td id="productCost-{{ $product->id }}">{{ $product->price }}</td>
