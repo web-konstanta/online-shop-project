@@ -21,6 +21,7 @@
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Название</th>
+          <th scope="col">Размер</th>
           <th scope="col">Количество</th>
           <th scope="col">Сумма</th>
         </tr>
@@ -31,6 +32,7 @@
             <tr>
               <td>{{ $product->id }}</td>
               <td>{{ $product->name }}</td>
+              <td>{{ $order->getProductSizeById($order->orderProduct($product->id)->product_size) }}</td>
               <td>{{ $order->orderProduct($product->id)->products_count }}</td>
               <td>{{ $product->price * $order->orderProduct($product->id)->products_count }}</td>
             </tr>
