@@ -15,11 +15,6 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')
                 ->after('message')
                 ->default(0);
-            $table->foreign('user_id', 'order_user_fk')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
         });
     }
 
@@ -30,7 +25,6 @@ return new class extends Migration
     {
         Schema::table('orders', function (Blueprint $table) {
             $table->dropColumn('user_id');
-            $table->dropForeign('order_user_fk');
         });
     }
 };
