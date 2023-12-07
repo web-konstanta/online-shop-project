@@ -256,7 +256,13 @@
                             <table class="b-product-info" id="characters" style="display: none">
                                 <tbody>
                                     <tr>
-                                        <td class="b-product-info__cell">{{ $product->characters }}</td>
+                                        <td class="b-product-info__cell">
+                                            <ul>
+                                                @foreach($product->getModifiedCharacters() as $character)
+                                                    <li>{{ $character }}</li><br>
+                                                @endforeach
+                                            </ul>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
