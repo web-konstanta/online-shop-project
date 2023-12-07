@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Order\OrderController;
 use App\Http\Controllers\Admin\Account\AccountController;
 use App\Http\Controllers\Admin\Contact\ContactController;
+use App\Http\Controllers\Admin\Size\SizeController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
@@ -40,6 +41,14 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
         Route::put('/{product}/update', [ProductController::class, 'update'])->name('update');
         Route::get('/{product}', [ProductController::class, 'show'])->name('show');
         Route::delete('/{product}/delete', [ProductController::class, 'destroy'])->name('delete');
+    });
+    Route::group(['prefix' => 'size', 'as' => 'size.'], function () {
+        Route::get('/', [SizeController::class, 'index'])->name('index');
+        Route::get('/create', [SizeController::class, 'create'])->name('create');
+        Route::post('/store', [SizeController::class, 'store'])->name('store');
+        Route::get('/{size}/edit', [SizeController::class, 'edit'])->name('edit');
+        Route::patch('/{size}/update', [SizeController::class, 'update'])->name('update');
+        Route::delete('/{size}/delete', [SizeController::class, 'destroy'])->name('delete');
     });
     Route::group(['prefix' => 'category', 'as' => 'category.'], function () {
         Route::get('/', [CategoryController::class, 'index'])->name('index');

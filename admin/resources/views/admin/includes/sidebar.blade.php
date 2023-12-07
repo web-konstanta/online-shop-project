@@ -103,6 +103,11 @@
           </a>
         </li>
         <li class="menu-item ">
+          <a href="{{ route('admin.size.index') }}" class="menu-link">
+            <div>Управление размерами товаров</div>
+          </a>
+        </li>
+        <li class="menu-item ">
           <a href="{{ route('admin.category.index') }}" class="menu-link">
             <div>Управление категориями</div>
           </a>

@@ -1,0 +1,41 @@
+@extends('admin.layouts.app')
+
+@section('title', 'Изменение размера')
+
+@section('content')
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="mb-2">Изменить размер</h4>
+
+        <form class="mb-3" action="{{ route('admin.size.update', $size->id) }}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('PATCH')
+          <div class="mb-3">
+            <label class="form-label">Размер</label>
+            @error('name')
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
+            <input type="text" class="form-control" name="name" value="{{ $size->name }}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Пренадлежность (категория)</label>
+            @error('category_id')
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
+            <select name="category_id" class="form-select" aria-label="Default select example">
+              @foreach($categories as $category)
+                <option
+                  {{ $category->id === $size->category->id ? 'selected' : '' }}
+                  value="{{ $category->id }}">{{ $category->name }}</option>
+              @endforeach
+            </select>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary d-grid w-100" type="submit">Добавить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+@endsection
