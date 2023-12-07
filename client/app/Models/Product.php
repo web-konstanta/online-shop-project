@@ -61,4 +61,9 @@ class Product extends Model
                     ->orWhere('code', 'LIKE', "%{$search}%");
             })->paginate(10);
     }
+
+    public function getModifiedCharacters(): array
+    {
+        return explode('@', $this->characters);
+    }
 }

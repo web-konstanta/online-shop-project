@@ -11,7 +11,7 @@
                 <div class="card mt-4" style="margin-bottom: 30%">
                     <div class="card-body">
                         <form class="text-start">
-                            <label id="name">Введите Ваше имя:</label>
+                            <label id="name">Введите Ваше ФИО:</label>
                             <div class="mb-3">
                                 <input type="text" class="form-control name" value="{{ auth()->user() ? auth()->user()->name : null }}">
                             </div>
@@ -19,7 +19,7 @@
                             <div class="mb-3">
                                 <input type="text" class="form-control phone">
                             </div>
-                            <label id="city">Введите текущий город проживания:</label>
+                            <label id="city">Введите Ваш город:</label>
                             <div class="mb-3">
                                 <input type="text" class="form-control city">
                             </div>
