@@ -28,8 +28,8 @@ class ContactController extends Controller
 
     public function contactUpdate(UpdateRequest $request): RedirectResponse
     {
-        $data = $request->validated();
-        Contact::query()->updateOrCreate($data, $data);
+        $contact = Contact::query()->find(1);
+        $contact->update($request->validated());
         session()->flash('success', 'Данные успешно обновлены');
         return redirect()->back();
     }
