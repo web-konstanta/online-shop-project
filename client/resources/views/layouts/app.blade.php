@@ -362,7 +362,7 @@
 
 
 <div style="min-height: 100vh; position: relative">
-    <div class="b-head-control-panel">
+    <div class="b-head-control-panel" style="background: #064210">
 
         <div data-bazooka="SiteHeader"
              data-site-header-url="https://my.prom.ua/remote/header/company_site_header/3225711?current_url=https%3A%2F%2Fsparta-gear.com.ua%2F&amp;site_language=ru&amp;is_premium_service_paid=1"
@@ -386,7 +386,7 @@
                 <div class="b-shopping-button js-shopping-cart-button-container"
                      data-sc-classactive="b-shopping-button_state_active"
                      data-sc-counter-class="b-shopping-button__counter">
-                    <div class="b-shopping-button__wrapper">
+                    <div class="b-shopping-button__wrapper" style="background: #176924; border-radius: 10px">
                         <span class="b-shopping-button__icon"></span>
                         <a href="{{ route('basket.index') }}" style="color: #ffffff" class="b-shopping-button__text">Корзина (<span id="basketCount">{{ $basketProductsCount }}</span>)</a>
                     </div>
@@ -425,7 +425,7 @@
     <div class="cs-page">
         <div class="cs-page__header">
             <div class="cs-header">
-                <div class="cs-header__content cs-header__content_line_first">
+                <div class="cs-header__content cs-header__content_line_first" style="background: #017514">
                     <div class="cs-header__content-inner">
                         <div class="cs-documents-wrapper">
                             <div class="b-hidden" data-bazooka="Tooltip" data-tooltip-target=".js-good-company"
@@ -557,7 +557,7 @@
     </div>
 
 
-    <div class="b-footer" style="position: absolute; bottom: 0; width: 100%">
+    <div class="b-footer" style="position: absolute; bottom: 0; width: 100%; background: #064210">
     </div>
 </div>
 
