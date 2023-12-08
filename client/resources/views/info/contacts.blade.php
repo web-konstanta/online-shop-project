@@ -83,18 +83,18 @@
                                                                 data-edit-role="companyInfo"
                                                                 style="display:none"></a><span
                                     class="cs-contact-info__row" title="Назва"
-                                    data-qaid="company_name">VOENTOR SHOP</span><span class="cs-contact-info__row"
+                                    data-qaid="company_name">{{ $info->company_name }}</span><span class="cs-contact-info__row"
                                                                                      title="Контактна особа"
-                                                                                     data-qaid="contact_person_name">ФОП</span>
+                                                                                     data-qaid="contact_person_name">{{ $info->contact_person }}</span>
                                 <address class="cs-contact-info__row" title="Адреса" data-qaid="company_address"><span
-                                        class="cs-contact-info__comma" title="Хмельницький, Хмельницький, Україна">Харків, Україна</span>
+                                        class="cs-contact-info__comma" title="Хмельницький, Хмельницький, Україна">{{ $info->address }}</span>
                                 </address>
                                 <div id="ID-1aeeb2ff-ce5a-43bd-a087-16b50ee471bc" class="cs-contact-info__row"
                                      title="Телефон" data-qaid="company_phones">
                                     <div class="cs-contact-info__phone-line js-ga-phone-hover"
                                          data-tg-hovered="[{&quot;ns&quot;: &quot;main&quot;, &quot;method&quot;: &quot;gatrackQueue&quot;, &quot;args&quot;: [&quot;contact_view&quot;, &quot;hover_phones&quot;, {&quot;label/label&quot;: &quot;company_site-contact_view&quot;}], &quot;uuid&quot;: &quot;cec63f85beae20842c7499c7181f9aa43a5b0b2e&quot;}, {&quot;ns&quot;: &quot;ga4&quot;, &quot;method&quot;: &quot;ga4trackQueue&quot;, &quot;args&quot;: [&quot;hover_phones&quot;, {}], &quot;uuid&quot;: &quot;4e92a0387e6f34f29450d658153e2311a9a4bd8f&quot;}, {&quot;ns&quot;: &quot;ym&quot;, &quot;method&quot;: &quot;reachGoal&quot;, &quot;args&quot;: [&quot;company_contacts_hovered&quot;], &quot;uuid&quot;: &quot;4e4e38200b10121d2620b45f0cb38f2ce6db161d&quot;}]"
                                          data-tg-clicked="[{&quot;ns&quot;: &quot;ga4&quot;, &quot;method&quot;: &quot;ga4trackQueue&quot;, &quot;args&quot;: [&quot;call_phones&quot;, {}], &quot;uuid&quot;: &quot;0fb6dc9f679fb331c05ab91bc83b3be7618dbfaa&quot;}]">
-                                        <span class="cs-contact-info__phone notranslate">+380 (99) 241 96 79</span>
+                                        <span class="cs-contact-info__phone notranslate">{{ $info->phone }}</span>
                                     </div>
                                 </div>
                             </div>
