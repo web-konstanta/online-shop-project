@@ -446,12 +446,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="cs-search-wrapper">
+                            <div class="cs-search-wrapper" style="border-radius: 15px; padding: 5px 10px">
                                 <form id="company_product_search_form" class="cs-search" name="company_product_search_form" method="get" action="#">
                                     <input
                                         class="cs-search__field"
                                         name="search" autocomplete="off"
-                                        maxlength="1000" type="text" placeholder="Поиск..."
+                                        maxlength="1000" type="text" placeholder="Поиск товаров..."
                                     >
                                     <button class="cs-search__button"></button>
                                 </form>
@@ -467,7 +467,7 @@
                                 class="cs-online-edit__horizontal-borders" data-edit-role="customMenu"
                                 style="display:none"></a><a class="cs-online-edit__vertical-borders"
                                                             data-edit-role="customMenu" style="display:none"></a>
-                            <ul class="cs-menu__holder">
+                            <ul class="cs-menu__holder" style="width: 1200px; margin: 0 auto">
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="/product_list"
                                                                            data-qaid="menu_item">Категорії товарів</a><span
                                         class="cs-menu__arrow"></span>
@@ -485,17 +485,21 @@
                                                                            data-qaid="menu_item">Топ продаж </a></li>
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('product.new') }}"
                                                                            data-qaid="menu_item">Новинки </a></li>
+                                <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('payment-delivery') }}"
+                                                                           data-qaid="menu_item">Оплата і доставка</a></li>
+                                <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('opt') }}"
+                                                                           data-qaid="menu_item">Співпраця ОПТ</a></li>
+                                <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('drop-shipping') }}"
+                                                                           data-qaid="menu_item">Співпраця Дроп</a></li>
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('contacts') }}"
-                                                                           data-qaid="menu_item">Контакти</a></li>
+                                                                           data-qaid="menu_item">Контактна інформація</a></li>
                                 <li class="cs-menu__item js-more-menu" data-qaid="menu_more_btn"
                                     style="position:absolute; left:-9999px"><span class="cs-menu__link">Ещё</span><span
                                         class="cs-menu__arrow"></span>
                                     <div class="cs-menu__sub-nav cs-menu__sub-nav_pos_last cs-sub-menu">
                                         <ul class="cs-sub-menu__holder">
-                                            <li class="cs-sub-menu__item js-more-menu-items"><a class="cs-sub-menu__link"
-                                                                                                href="/product_list"
-                                                                                                data-qaid="menu_item">Категорії
-                                                    товарів</a>
+                                            <li class="cs-sub-menu__item js-more-menu-items">Категорії
+                                                товарів
                                                 <div class="cs-sub-menu__inner-menu cs-inner-menu">
                                                     <ul class="cs-inner-menu__wrapper">
                                                         <li class="cs-inner-menu__item"><a class="cs-inner-menu__link"
