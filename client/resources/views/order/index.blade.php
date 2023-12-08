@@ -1,38 +1,38 @@
 @extends('layouts.app')
 
-@section('title', 'Оформление заказа')
+@section('title', __('order.title'))
 
 @section('content')
     <div class="container">
         <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
             <div id="success" class="alert alert-success text-center d-none">Заказ оформлен успешно</div>
             <div id="form">
-                <h3 class="text-center">Выбрано {{ $productsCount }} товаров на сумму {{ $totalPrice }} грн</h3>
+                <h3 class="text-center">@lang('order.taken') {{ $productsCount }} @lang('order.products') {{ $totalPrice }} грн</h3>
                 <div class="card mt-4" style="margin-bottom: 30%">
                     <div class="card-body">
                         <form class="text-start">
-                            <label id="name">Введите Ваше ФИО:</label>
+                            <label id="name">@lang('order.name')</label>
                             <div class="mb-3">
                                 <input type="text" class="form-control name" value="{{ auth()->user() ? auth()->user()->name : null }}">
                             </div>
-                            <label id="phone">Введите Ваш номер телефона:</label>
+                            <label id="phone">@lang('order.phone')</label>
                             <div class="mb-3">
                                 <input type="text" class="form-control phone">
                             </div>
-                            <label id="city">Введите Ваш город:</label>
+                            <label id="city">@lang('order.city')</label>
                             <div class="mb-3">
                                 <input type="text" class="form-control city">
                             </div>
-                            <label id="postal">Введите отделение новой почты:</label>
+                            <label id="postal">@lang('order.postal')</label>
                             <div class="mb-3">
                                 <input type="text" class="form-control postal">
                             </div>
-                            <label>Введите комментарий (не обязательно)</label>
+                            <label>@lang('order.comment')</label>
                             <div class="mb-3">
                                 <textarea class="form-control message"></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn btn-primary w-100 mt-4 mb-0 submit">Оформить заказ</button>
+                                <button type="button" class="btn btn-primary w-100 mt-4 mb-0 submit">@lang('order.order')</button>
                             </div>
                         </form>
                     </div>

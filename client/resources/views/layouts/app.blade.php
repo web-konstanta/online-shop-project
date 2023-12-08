@@ -368,12 +368,11 @@
              data-site-header-url="https://my.prom.ua/remote/header/company_site_header/3225711?current_url=https%3A%2F%2Fsparta-gear.com.ua%2F&amp;site_language=ru&amp;is_premium_service_paid=1"
              data-bazid="3"></div>
         <div class="b-head-control-panel__container" data-qaid="header-block">
-{{--            <div data-bazooka="LanguageSwitch" data-bazid="4">--}}
-{{--                <div class="LanguageSwitch__root--1cwxu"><a class="LanguageSwitch__item--R2zW6"--}}
-{{--                                                            href="https://sparta-gear.com.ua/ua/"><span--}}
-{{--                            class="LanguageSwitch__text--3x6Wz">ua</span></a><a class="LanguageSwitch__item--R2zW6"><span--}}
-{{--                            class="LanguageSwitch__text--3x6Wz LanguageSwitch__textActive--3j2DK">ru</span></a></div>--}}
-{{--            </div>--}}
+            <div data-bazooka="LanguageSwitch" data-bazid="4">
+                <div class="LanguageSwitch__root--1cwxu">
+                    <a class="LanguageSwitch__item--R2zW6" href="{{ route('locale', __('header.locale')) }}"><span
+                            class="LanguageSwitch__text--3x6Wz LanguageSwitch__textActive--3j2DK">@lang('header.locale')</span></a></div>
+            </div>
 
 
             <div class="b-head-control-panel__toolbar js-header_toolbar">
@@ -388,7 +387,7 @@
                      data-sc-counter-class="b-shopping-button__counter">
                     <div class="b-shopping-button__wrapper" style="background: #176924; border-radius: 10px">
                         <span class="b-shopping-button__icon"></span>
-                        <a href="{{ route('basket.index') }}" style="color: #ffffff" class="b-shopping-button__text">Корзина (<span id="basketCount">{{ $basketProductsCount }}</span>)</a>
+                        <a href="{{ route('basket.index') }}" style="color: #ffffff" class="b-shopping-button__text">@lang('header.basket') (<span id="basketCount">{{ $basketProductsCount }}</span>)</a>
                     </div>
                 </div>
             </div>
@@ -469,7 +468,7 @@
                                                             data-edit-role="customMenu" style="display:none"></a>
                             <ul class="cs-menu__holder" style="width: 1200px; margin: 0 auto">
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="/product_list"
-                                                                           data-qaid="menu_item">Категорії товарів</a><span
+                                                                           data-qaid="menu_item">@lang('header.menu.categories')</a><span
                                         class="cs-menu__arrow"></span>
                                     <div class="cs-menu__sub-nav cs-sub-menu">
                                         <ul class="cs-sub-menu__holder">
@@ -482,24 +481,23 @@
                                     </div>
                                 </li>
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('product.top-sales') }}"
-                                                                           data-qaid="menu_item">Топ продаж </a></li>
+                                                                           data-qaid="menu_item">@lang('header.menu.top_sales') </a></li>
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('product.new') }}"
-                                                                           data-qaid="menu_item">Новинки </a></li>
+                                                                           data-qaid="menu_item">@lang('header.menu.news') </a></li>
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('payment-delivery') }}"
-                                                                           data-qaid="menu_item">Оплата і доставка</a></li>
+                                                                           data-qaid="menu_item">@lang('header.menu.payment')</a></li>
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('opt') }}"
-                                                                           data-qaid="menu_item">Співпраця ОПТ</a></li>
+                                                                           data-qaid="menu_item">@lang('header.menu.opt')</a></li>
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('drop-shipping') }}"
-                                                                           data-qaid="menu_item">Співпраця Дроп</a></li>
+                                                                           data-qaid="menu_item">@lang('header.menu.drop')</a></li>
                                 <li class="cs-menu__item js-menu-items"><a class="cs-menu__link" href="{{ route('contacts') }}"
-                                                                           data-qaid="menu_item">Контактна інформація</a></li>
+                                                                           data-qaid="menu_item">@lang('header.menu.contacts')</a></li>
                                 <li class="cs-menu__item js-more-menu" data-qaid="menu_more_btn"
                                     style="position:absolute; left:-9999px"><span class="cs-menu__link">Ещё</span><span
                                         class="cs-menu__arrow"></span>
                                     <div class="cs-menu__sub-nav cs-menu__sub-nav_pos_last cs-sub-menu">
                                         <ul class="cs-sub-menu__holder">
-                                            <li class="cs-sub-menu__item js-more-menu-items">Категорії
-                                                товарів
+                                            <li class="cs-sub-menu__item js-more-menu-items">@lang('header.menu.categories')
                                                 <div class="cs-sub-menu__inner-menu cs-inner-menu">
                                                     <ul class="cs-inner-menu__wrapper">
                                                         <li class="cs-inner-menu__item"><a class="cs-inner-menu__link"

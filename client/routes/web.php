@@ -8,53 +8,58 @@ use App\Http\Controllers\Frontend\Info\InfoController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Frontend\Cabinet\CabinetController;
 use App\Http\Controllers\Frontend\Cabinet\OrderController as OrderCabinetController;
+use App\Http\Controllers\Frontend\LocaleController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('auth.protect')->group(function () {
-    Route::get('/register', [AuthController::class, 'registerView'])->name('register-view');
-    Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/locale/{locale}', LocaleController::class)->name('locale');
 
-    Route::get('/login', [AuthController::class, 'loginView'])->name('login-view');
-    Route::post('/login', [AuthController::class, 'login'])->name('login');
-});
+Route::middleware('locale')->group(function () {
+    Route::get('/payment-delivery', [InfoController::class, 'paymentDelivery'])->name('payment-delivery');
+    Route::get('/opt', [InfoController::class, 'opt'])->name('opt');
+    Route::get('/drop-shipping', [InfoController::class, 'dropShipping'])->name('drop-shipping');
+    Route::get('/contacts', [InfoController::class, 'contacts'])->name('contacts');
 
-Route::as('product.')->group(function () {
-    Route::get('/', [ProductController::class, 'index'])->name('index');
-    Route::get('/product/{product}', [ProductController::class, 'show'])->name('show');
-    Route::get('/top_sales', [ProductController::class, 'topSales'])->name('top-sales');
-    Route::get('/new', [ProductController::class, 'newProducts'])->name('new');
-});
+    Route::middleware('auth.protect')->group(function () {
+        Route::get('/register', [AuthController::class, 'registerView'])->name('register-view');
+        Route::post('/register', [AuthController::class, 'register'])->name('register');
 
-Route::group(['prefix' => 'basket', 'as' => 'basket.'], function () {
-    Route::get('/', [BasketController::class, 'index'])->name('index');
-});
-
-Route::group(['middleware' => 'order', 'prefix' => 'order', 'as' => 'order.'], function () {
-    Route::get('/create', OrderController::class)->name('index');
-});
-
-Route::group(['middleware' => 'auth', 'prefix' => 'cabinet', 'as' => 'cabinet.'], function () {
-    Route::get('/', [CabinetController::class, 'index'])->name('index');
-
-    Route::group(['prefix' => 'personal', 'as' => 'personal.'], function () {
-        Route::get('/', [CabinetController::class, 'personalDataView'])->name('index');
-        Route::put('/update', [CabinetController::class, 'personalDataUpdate'])->name('update');
+        Route::get('/login', [AuthController::class, 'loginView'])->name('login-view');
+        Route::post('/login', [AuthController::class, 'login'])->name('login');
     });
 
-    Route::group(['prefix' => 'order', 'as' => 'order.'], function () {
-        Route::get('/', [OrderCabinetController::class, 'index'])->name('index');
-        Route::get('/{order}', [OrderCabinetController::class, 'show'])->name('show');
+    Route::as('product.')->group(function () {
+        Route::get('/', [ProductController::class, 'index'])->name('index');
+        Route::get('/product/{product}', [ProductController::class, 'show'])->name('show');
+        Route::get('/top_sales', [ProductController::class, 'topSales'])->name('top-sales');
+        Route::get('/new', [ProductController::class, 'newProducts'])->name('new');
     });
 
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-});
+    Route::group(['prefix' => 'basket', 'as' => 'basket.'], function () {
+        Route::get('/', [BasketController::class, 'index'])->name('index');
+    });
 
-Route::group(['prefix' => 'products', 'as' => 'category.'], function () {
-    Route::get('/{code}', [CategoryController::class, 'products'])->name('products');
-    Route::get('/{categoryCode}/{subCategoryCode}', [CategoryController::class, 'subCategoryProduct'])->name('sub_category-products');
-});
+    Route::group(['middleware' => 'order', 'prefix' => 'order', 'as' => 'order.'], function () {
+        Route::get('/create', OrderController::class)->name('index');
+    });
 
-Route::get('/payment-delivery', [InfoController::class, 'paymentDelivery'])->name('payment-delivery');
-Route::get('/opt', [InfoController::class, 'opt'])->name('opt');
-Route::get('/drop-shipping', [InfoController::class, 'dropShipping'])->name('drop-shipping');
-Route::get('/contacts', [InfoController::class, 'contacts'])->name('contacts');
+    Route::group(['middleware' => 'auth', 'prefix' => 'cabinet', 'as' => 'cabinet.'], function () {
+        Route::get('/', [CabinetController::class, 'index'])->name('index');
+
+        Route::group(['prefix' => 'personal', 'as' => 'personal.'], function () {
+            Route::get('/', [CabinetController::class, 'personalDataView'])->name('index');
+            Route::put('/update', [CabinetController::class, 'personalDataUpdate'])->name('update');
+        });
+
+        Route::group(['prefix' => 'order', 'as' => 'order.'], function () {
+            Route::get('/', [OrderCabinetController::class, 'index'])->name('index');
+            Route::get('/{order}', [OrderCabinetController::class, 'show'])->name('show');
+        });
+
+        Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    });
+
+    Route::group(['prefix' => 'products', 'as' => 'category.'], function () {
+        Route::get('/{code}', [CategoryController::class, 'products'])->name('products');
+        Route::get('/{categoryCode}/{subCategoryCode}', [CategoryController::class, 'subCategoryProduct'])->name('sub_category-products');
+    });
+});
