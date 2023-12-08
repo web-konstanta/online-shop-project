@@ -54,4 +54,7 @@ Route::group(['prefix' => 'products', 'as' => 'category.'], function () {
     Route::get('/{categoryCode}/{subCategoryCode}', [CategoryController::class, 'subCategoryProduct'])->name('sub_category-products');
 });
 
+Route::get('/payment-delivery', [InfoController::class, 'paymentDelivery'])->name('payment-delivery');
+Route::get('/opt', [InfoController::class, 'opt'])->name('opt');
+Route::get('/drop-shipping', [InfoController::class, 'dropShipping'])->name('drop-shipping');
 Route::get('/contacts', [InfoController::class, 'contacts'])->name('contacts');
