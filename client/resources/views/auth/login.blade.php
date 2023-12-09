@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Вход')
+@section('title', __('login.title'))
 
 @section('content')
     <div class="container">
@@ -15,14 +15,14 @@
                                 @endif
                                 <form action="{{ route('login') }}" class="text-start" method="post">
                                     @csrf
-                                    <label id="phone">Введите Ваш email:</label>
+                                    <label id="phone">@lang('login.email')</label>
                                     @error('email')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                     <div class="mb-3">
                                         <input name="email" type="email" class="form-control phone">
                                     </div>
-                                    <label>Введите пароль</label>
+                                    <label>@lang('login.password')</label>
                                     @error('password')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror
@@ -30,10 +30,10 @@
                                         <input name="password" type="password" class="form-control phone">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary w-100 mt-3 mb-0 submit">Войти</button>
+                                        <button type="submit" class="btn btn-primary w-100 mt-3 mb-0 submit">@lang('login.login')</button>
                                     </div>
                                     <div class="mt-3">
-                                        <p class="text-center">Еще нет аккаутна? <a href="{{ route('register-view') }}">Зарегистрироваться</a></p>
+                                        <p class="text-center"><a href="{{ route('register-view') }}">@lang('login.not_login')</a></p>
                                     </div>
                                 </form>
                             </div>

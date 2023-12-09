@@ -31,14 +31,14 @@ class RegisterRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'Имя должно быть введено',
-            'name.max' => 'Слишком длинное имя',
-            'email.required' => 'Email должен быть введен',
-            'email.unique' => 'Данный email уже используется на сайте',
-            'password.required' => 'Введите пароль',
-            'password.min' => 'Пароль должен быть не короче 6 символов',
-            'password.max' => 'Пароль слишком длинный',
-            'password.confirmed' => 'Пароли не совпадают'
+            'name.required' => __('auth-validation.name.required'),
+            'name.max' => __('auth-validation.name.max'),
+            'email.required' => __('auth-validation.email.required'),
+            'email.unique' => __('auth-validation.email.unique'),
+            'password.required' => __('auth-validation.password.required'),
+            'password.min' => __('auth-validation.password.min'),
+            'password.max' => __('auth-validation.password.max'),
+            'password.confirmed' => __('auth-validation.password.confirmed')
         ];
     }
 }
