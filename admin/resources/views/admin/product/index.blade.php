@@ -24,9 +24,8 @@
         <table class="table">
           <thead>
           <tr>
-            <th>ID</th>
             <th>Название</th>
-            <th>Стоимость</th>
+            <th>Стоимость (грн)</th>
             <th class="text-center">Просмотреть</th>
             <th class="text-center">Изменить</th>
             <th class="text-center">Удалить</th>
@@ -36,7 +35,6 @@
           @if($products->count() > 0)
             @foreach($products as $product)
               <tr>
-                <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->price }}</td>
                 <td class="text-center">

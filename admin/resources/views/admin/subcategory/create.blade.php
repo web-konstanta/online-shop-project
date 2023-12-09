@@ -15,7 +15,7 @@
             @error('name')
             <p class="text-danger">{{ $message }}</p>
             @enderror
-            <input type="text" class="form-control" name="name" placeholder="Введите название категории">
+            <input type="text" class="form-control" name="name" placeholder="Введите название подкатегории">
           </div>
           <div class="mb-3">
             <label class="form-label">Категория</label>

@@ -24,9 +24,7 @@
         <table class="table">
           <thead>
           <tr>
-            <th>ID</th>
             <th>Название</th>
-            <th>Подкатегория</th>
             <th class="text-center">Изменить</th>
             <th class="text-center">Удалить</th>
           </tr>
@@ -34,8 +32,6 @@
           <tbody class="table-border-bottom-0">
           @foreach($categories as $category)
             <tr>
-              <td>{{ $category->id }}</td>
-              <td>{{ $category->name }}</td>
               <td>{{ $category->name }}</td>
               <td class="text-center">
                 <a href="{{ route('admin.category.edit', $category->id) }}">
