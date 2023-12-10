@@ -8,7 +8,7 @@
             <h1 class="text-center" style="font-size: 24px">Категория: {{ $category->name }}</h1>
             <ul class="d-flex justify-content-between col-3" style="margin: 25px auto">
                 @foreach($category->subCategories as $subCategory)
-                    <a href="{{ route('category.sub_category-products', [$category->code, $subCategory->code]) }}">
+                    <a style="color: grey" href="{{ route('category.sub_category-products', [$category->code, $subCategory->code]) }}">
                         <li style="font-size: 20px">{{ $subCategory->name }}</li>
                     </a>
                 @endforeach

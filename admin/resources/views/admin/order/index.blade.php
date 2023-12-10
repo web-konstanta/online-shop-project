@@ -23,6 +23,7 @@
         <table class="table">
           <thead>
           <tr>
+            <th>ID</th>
             <th>ФИО покупателя</th>
             <th>Телефон покупателя</th>
             <th>Дата оформления</th>
@@ -35,6 +36,7 @@
           <tbody class="table-border-bottom-0">
           @forelse($orders as $order)
             <tr>
+              <td>{{ $order->id }}</td>
               <td>{{ $order->name }}</td>
               <td>{{ $order->phone }}</td>
               <td>{{ \Carbon\Carbon::parse($order->created_at)->format('d-m-Y') }}</td>
