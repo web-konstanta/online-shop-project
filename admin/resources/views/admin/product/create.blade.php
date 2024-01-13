@@ -43,7 +43,7 @@
             @error('code')
             <p class="text-danger">{{ $message }}</p>
             @enderror
-            <input type="number" class="form-control" name="code" placeholder="Введите код товара">
+            <input type="text" class="form-control" name="code" placeholder="Введите код товара">
           </div>
           <div class="mb-3">
             <label class="form-label">Изображение (для витрины)</label>

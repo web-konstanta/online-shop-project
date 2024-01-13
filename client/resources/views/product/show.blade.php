@@ -156,9 +156,15 @@
                                     class="cs-tab-list__item cs-tab-list__item_state_active js-content-item cs-online-edit">
                                     <table>
                                         <tbody>
-                                            <tr>
-                                                <td class="b-product-info__cell">{{ $product->description }}</td>
-                                            </tr>
+                                        <tr>
+                                            <td class="b-product-info__cell">
+                                                <ul>
+                                                    @foreach($product->getModifiedDescription() as $character)
+                                                        <li>{{ $character }}</li><br>
+                                                    @endforeach
+                                                </ul>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>

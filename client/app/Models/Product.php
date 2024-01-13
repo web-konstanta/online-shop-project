@@ -66,4 +66,9 @@ class Product extends Model
     {
         return explode('@', $this->characters);
     }
+
+    public function getModifiedDescription(): array
+    {
+        return explode('@', $this->description);
+    }
 }
